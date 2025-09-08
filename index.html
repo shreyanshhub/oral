@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPAudioEraser: IJCB 2025 Presentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Enhanced Title Slide -->
+        <div class="slide active" id="slide-1">
+            <div class="slide-content title-slide-enhanced">
+                <div class="title-layout">
+                    <div class="institutional-branding">
+                        <div class="logo-section">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1755208254/pplx_project_search_images/578618ec4ded8a6f1df9bb651f715c6f4a8a21a1.png" alt="IIT Jodhpur Logo" class="iit-logo">
+                            <div class="lab-branding">
+                                <h3>IAB Lab</h3>
+                                <p>Image Analysis and Biometrics Laboratory</p>
+                            </div>
+                        </div>
+                        <div class="institutional-tagline">
+                            <p>"Innovation in Biometrics and Privacy"</p>
+                        </div>
+                        <div class="india-map-container">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1757313851/pplx_project_search_images/c7d14e101634110bf7c85bc02f1dc194636f4f03.png" alt="India Map" class="india-map">
+                            <div class="jodhpur-marker">📍</div>
+                        </div>
+                    </div>
+                    <div class="title-content">
+                        <h1 class="gradient-title">QPAudioEraser</h1>
+                        <h2 class="subtitle">Quantum-Inspired Audio Unlearning for Privacy-Preserving Voice Biometrics</h2>
+                        <div class="authors-enhanced">
+                            <p class="author-names"><strong>Shreyansh Pathak, Sonu Shreshtha, Richa Singh, Mayank Vatsa</strong></p>
+                            <p class="institution">Indian Institute of Technology Jodhpur, India</p>
+                        </div>
+                        <div class="conference-branding">
+                            <div class="conference-logo">
+                                <h2>IJCB 2025</h2>
+                                <p class="conference-subtitle">International Joint Conference on Biometrics</p>
+                            </div>
+                            <div class="conference-details">
+                                <p class="location">📍 Osaka, Japan</p>
+                                <p class="dates">🗓️ September 15-18, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Enhanced Motivation & Problem Statement -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <h2>Motivation & Problem Statement</h2>
+                <div class="timeline-section">
+                    <h3>🕐 Privacy Regulation Evolution</h3>
+                    <div class="timeline-container">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1755457904/pplx_project_search_images/6bb8b56a685d1b36bd9025093ea29f10c9920e29.png" alt="Privacy Evolution Timeline" class="timeline-image">
+                        <div class="timeline-overlay">
+                            <div class="timeline-item" data-year="1890">
+                                <div class="timeline-icon">🏛️</div>
+                                <div class="timeline-content">
+                                    <h4>1890</h4>
+                                    <p>Privacy Concept Introduction</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-year="1995">
+                                <div class="timeline-icon">🇪🇺</div>
+                                <div class="timeline-content">
+                                    <h4>1995</h4>
+                                    <p>EU Data Protection Directive</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-year="2016">
+                                <div class="timeline-icon">⚖️</div>
+                                <div class="timeline-content">
+                                    <h4>2016</h4>
+                                    <p>GDPR Implementation</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-year="2023">
+                                <div class="timeline-icon">🇮🇳</div>
+                                <div class="timeline-content">
+                                    <h4>2023</h4>
+                                    <p>India DPDP Act</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="problem-statement-enhanced">
+                    <div class="statistics-highlight">
+                        <div class="stat-box critical">
+                            <h3>73%</h3>
+                            <p>of voice-enabled devices lack proper unlearning capabilities</p>
+                        </div>
+                        <div class="gap-analysis">
+                            <h3>🔴 The Critical Gap</h3>
+                            <div class="gap-comparison">
+                                <div class="gdpr-requirements">
+                                    <h4>GDPR Requirements</h4>
+                                    <ul>
+                                        <li>✅ Right to be forgotten</li>
+                                        <li>✅ Complete data erasure</li>
+                                        <li>✅ Privacy by design</li>
+                                    </ul>
+                                </div>
+                                <div class="vs-divider">VS</div>
+                                <div class="current-systems">
+                                    <h4>Current Audio ML Systems</h4>
+                                    <ul>
+                                        <li>❌ Persistent AI memory</li>
+                                        <li>❌ Incomplete unlearning</li>
+                                        <li>❌ Privacy vulnerabilities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Enhanced Audio Biometrics Privacy Challenges -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <h2>Audio Biometrics Privacy Challenges</h2>
+                
+                <div class="system-architecture">
+                    <h3>🏗️ Voice Biometric System Architecture</h3>
+                    <div class="architecture-flow">
+                        <div class="arch-step">
+                            <div class="step-icon">🎤</div>
+                            <h4>Voice Enrollment</h4>
+                            <p>Audio capture and registration</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="arch-step">
+                            <div class="step-icon">📊</div>
+                            <h4>Feature Extraction</h4>
+                            <p>Spectral analysis and processing</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="arch-step">
+                            <div class="step-icon">🧠</div>
+                            <h4>Model Training</h4>
+                            <p>Deep learning optimization</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="arch-step">
+                            <div class="step-icon">✅</div>
+                            <h4>Verification</h4>
+                            <p>Identity authentication</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="threats-analysis">
+                    <h3>⚠️ Security Threat Landscape</h3>
+                    <div class="threat-grid">
+                        <div class="threat-item high-risk">
+                            <div class="threat-icon">🎭</div>
+                            <h4>Voice Spoofing</h4>
+                            <p>Impersonation attacks</p>
+                        </div>
+                        <div class="threat-item high-risk">
+                            <div class="threat-icon">🔄</div>
+                            <h4>Replay Attacks</h4>
+                            <p>Recorded voice playback</p>
+                        </div>
+                        <div class="threat-item critical-risk">
+                            <div class="threat-icon">🤖</div>
+                            <h4>Deepfake Synthesis</h4>
+                            <p>AI-generated fake voices</p>
+                        </div>
+                        <div class="threat-item critical-risk">
+                            <div class="threat-icon">💾</div>
+                            <h4>Template Leakage</h4>
+                            <p>Biometric data exposure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="statistics-section">
+                    <div class="stat-comparison">
+                        <div class="growth-stat positive">
+                            <h3>300% ↗️</h3>
+                            <p>Voice biometric systems growth</p>
+                        </div>
+                        <div class="breach-stat negative">
+                            <h3>150% ↗️</h3>
+                            <p>Privacy breaches increase</p>
+                        </div>
+                    </div>
+                    <div class="deletion-comparison">
+                        <div class="traditional-deletion">
+                            <h4>Traditional Deletion</h4>
+                            <div class="deletion-visual">
+                                <div class="file-icon">📄</div>
+                                <div class="delete-action">🗑️</div>
+                                <div class="result">✅ Gone</div>
+                            </div>
+                        </div>
+                        <div class="vs-divider">VS</div>
+                        <div class="ml-forgetting">
+                            <h4>ML "Forgetting"</h4>
+                            <div class="deletion-visual">
+                                <div class="brain-icon">🧠</div>
+                                <div class="memory-traces">💭💭💭</div>
+                                <div class="result">❓ Traces remain</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Enhanced Machine Unlearning Background -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <h2>Machine Unlearning Background</h2>
+                
+                <div class="unlearning-definition-enhanced">
+                    <div class="definition-card">
+                        <h3>📚 Definition</h3>
+                        <p>The process of making a trained machine learning model forget specific training data while maintaining performance on the remaining data.</p>
+                    </div>
+                </div>
+
+                <div class="unlearning-pipeline">
+                    <h3>🔄 Machine Unlearning Pipeline</h3>
+                    <div class="pipeline-container">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1757313872/pplx_project_search_images/8049ffb1591b8f8f0848726728f65acd22c3fde4.png" alt="Machine Unlearning Process" class="unlearning-diagram">
+                        <div class="pipeline-labels">
+                            <div class="data-label retain-data">
+                                <span class="color-indicator green"></span>
+                                <strong>Retain Data (D<sub>r</sub>)</strong>
+                            </div>
+                            <div class="data-label forget-data">
+                                <span class="color-indicator red"></span>
+                                <strong>Forget Data (D<sub>f</sub>)</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-table-enhanced">
+                    <h3>⚖️ Exact vs Approximate Unlearning</h3>
+                    <div class="comparison-grid">
+                        <div class="comparison-item exact">
+                            <div class="method-header">
+                                <h4>🎯 Exact Unlearning</h4>
+                                <div class="accuracy-badge perfect">Perfect</div>
+                            </div>
+                            <ul>
+                                <li>✅ Complete data influence removal</li>
+                                <li>✅ Mathematically guaranteed</li>
+                                <li>❌ Computationally expensive</li>
+                                <li>❌ Often requires retraining</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-item approximate">
+                            <div class="method-header">
+                                <h4>⚡ Approximate Unlearning</h4>
+                                <div class="accuracy-badge practical">Practical</div>
+                            </div>
+                            <ul>
+                                <li>✅ Efficient implementation</li>
+                                <li>✅ Scalable approach</li>
+                                <li>⚠️ Minimal traces may remain</li>
+                                <li>⚠️ Performance trade-offs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-challenges-enhanced">
+                    <h3>🎵 Audio-Specific Challenges</h3>
+                    <div class="audio-challenge-grid">
+                        <div class="challenge-card temporal">
+                            <div class="waveform-visual">
+                                <img src="https://pplx-res.cloudinary.com/image/upload/v1754710864/pplx_project_search_images/479b4d749096d62c0aff016c53731713aee2eb8f.png" alt="Audio Waveform" class="waveform-img">
+                            </div>
+                            <h4>Sequential Dependencies</h4>
+                            <p>Temporal patterns and phoneme relationships</p>
+                        </div>
+                        <div class="challenge-card spectral">
+                            <div class="spectrum-icon">📊</div>
+                            <h4>Spectral Complexity</h4>
+                            <p>Frequency domain features and harmonics</p>
+                        </div>
+                        <div class="challenge-card speaker">
+                            <div class="speaker-icon">👤</div>
+                            <h4>Speaker Characteristics</h4>
+                            <p>Individual voice traits and variations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="complexity-visualization">
+                    <h3>⚙️ Computational Complexity Analysis</h3>
+                    <div class="complexity-comparison">
+                        <div class="complexity-bar">
+                            <div class="method-name">Retraining from Scratch</div>
+                            <div class="complexity-level extreme">O(E × |D| × T)</div>
+                        </div>
+                        <div class="complexity-bar">
+                            <div class="method-name">Influence Functions</div>
+                            <div class="complexity-level high">O(|D|² × T)</div>
+                        </div>
+                        <div class="complexity-bar">
+                            <div class="method-name">Our Approach</div>
+                            <div class="complexity-level moderate">O(E × |D<sub>f</sub>| × T)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Enhanced Quantum-Inspired ML Motivation -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <h2>Quantum-Inspired Machine Learning Motivation</h2>
+                
+                <div class="quantum-visualization">
+                    <h3>⚛️ Quantum Principles Visualization</h3>
+                    <div class="quantum-grid">
+                        <div class="quantum-concept superposition">
+                            <div class="quantum-icon">🌊</div>
+                            <h4>Superposition</h4>
+                            <div class="concept-visual">
+                                <div class="state-representation">
+                                    <div class="classical-state">
+                                        <span>Classical: |0⟩ or |1⟩</span>
+                                    </div>
+                                    <div class="quantum-state">
+                                        <span>Quantum: α|0⟩ + β|1⟩</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Multiple states exist simultaneously until measurement</p>
+                        </div>
+                        
+                        <div class="quantum-concept interference">
+                            <div class="quantum-icon">〰️</div>
+                            <h4>Destructive Interference</h4>
+                            <div class="interference-visual">
+                                <div class="wave-diagram">
+                                    <div class="wave positive">+</div>
+                                    <div class="wave negative">-</div>
+                                    <div class="result-wave">= 0</div>
+                                </div>
+                            </div>
+                            <p>Cancellation of unwanted information through phase manipulation</p>
+                        </div>
+                        
+                        <div class="quantum-concept entanglement">
+                            <div class="quantum-icon">🔗</div>
+                            <h4>Entanglement</h4>
+                            <div class="entanglement-visual">
+                                <img src="https://pplx-res.cloudinary.com/image/upload/v1754681095/pplx_project_search_images/b905bf6dd8276f141b1df3d66d06351840c5bc98.png" alt="Quantum Entanglement" class="entanglement-img">
+                            </div>
+                            <p>Correlated states that influence each other instantaneously</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantum-analogy-enhanced">
+                    <h3>🔄 Quantum → Classical ML Analogy</h3>
+                    <div class="analogy-mapping">
+                        <div class="analogy-pair">
+                            <div class="quantum-side">
+                                <h4>🔬 Quantum Computing</h4>
+                                <div class="concept-box">
+                                    <span class="concept-label">Classical Bits</span>
+                                    <div class="bit-representation">0 | 1</div>
+                                </div>
+                                <div class="concept-box">
+                                    <span class="concept-label">Quantum Qubits</span>
+                                    <div class="qubit-representation">α|0⟩ + β|1⟩</div>
+                                </div>
+                            </div>
+                            <div class="arrow-mapping">⟹</div>
+                            <div class="ml-side">
+                                <h4>🤖 Machine Learning</h4>
+                                <div class="concept-box">
+                                    <span class="concept-label">Classical Labels</span>
+                                    <div class="label-representation">[0, 0, 1, 0]</div>
+                                </div>
+                                <div class="concept-box">
+                                    <span class="concept-label">Superposition Labels</span>
+                                    <div class="superposition-representation">[0.25, 0.25, 0.25, 0.25]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantum-advantages">
+                    <h3>🚀 Quantum-Inspired Advantages for ML</h3>
+                    <div class="advantage-grid">
+                        <div class="advantage-item">
+                            <div class="advantage-icon">🎯</div>
+                            <h4>Natural Uncertainty Handling</h4>
+                            <p>Inherent framework for probabilistic reasoning and ambiguity management</p>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">💥</div>
+                            <h4>Interference-Based Erasure</h4>
+                            <p>Natural cancellation mechanisms for unwanted information removal</p>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">🕸️</div>
+                            <h4>Holistic Parameter Interdependence</h4>
+                            <p>Global parameter correlations through entanglement-inspired coupling</p>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">⚖️</div>
+                            <h4>Dual-Objective Optimization</h4>
+                            <p>Simultaneous maximization and minimization inspired by uncertainty principle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transition-to-audio">
+                    <h3>🔊 Transition to Audio Unlearning</h3>
+                    <div class="transition-flow">
+                        <div class="transition-step">
+                            <h4>Quantum Superposition</h4>
+                            <p>⬇️</p>
+                            <h4>Maximum Entropy Labels</h4>
+                        </div>
+                        <div class="transition-step">
+                            <h4>Destructive Interference</h4>
+                            <p>⬇️</p>
+                            <h4>Weight Cancellation</h4>
+                        </div>
+                        <div class="transition-step">
+                            <h4>Entanglement</h4>
+                            <p>⬇️</p>
+                            <h4>Parameter Mixing</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Our Contribution: QPAudioEraser -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <h2>Our Contribution: QPAudioEraser</h2>
+                <div class="contribution-highlights">
+                    <div class="highlight-box">
+                        <h3>🎯 First Quantum-Inspired Audio Unlearning Framework</h3>
+                        <p>Novel approach specifically designed for audio biometric systems</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>🏗️ Architecture-Agnostic Approach</h3>
+                        <p>Works across different model architectures (ResNet, ViT, CNN)</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>🔄 Four-Phase Methodology</h3>
+                        <p>Systematic quantum-inspired unlearning process</p>
+                    </div>
+                </div>
+                <div class="key-features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Perfect forget accuracy (0.00%)</li>
+                        <li>Minimal utility loss (0.05% degradation)</li>
+                        <li>100% privacy erasure rate</li>
+                        <li>GDPR compliance ready</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Phase 1: Destructive Interference -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <h2>Phase 1: Destructive Interference</h2>
+                <div class="phase-description">
+                    <h3>Objective: Immediate confidence reduction for forget class</h3>
+                </div>
+                <div class="formula-box">
+                    <h3>Mathematical Formulation</h3>
+                    <p class="formula">W<sub>F</sub> = W<sub>F</sub> × cos(φ) / √2</p>
+                    <p class="formula-desc">Where φ is the interference phase parameter</p>
+                </div>
+                <div class="mechanism">
+                    <h3>Mechanism</h3>
+                    <ul>
+                        <li>Weight transformation using quantum interference principles</li>
+                        <li>cos(φ)/√2 scaling reduces activation strength</li>
+                        <li>Phase parameter φ controls interference magnitude</li>
+                        <li>Immediate reduction in forget class confidence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Phase 2: Superposition-Based Labels -->
+        <div class="slide" id="slide-8">
+            <div class="slide-content">
+                <h2>Phase 2: Superposition-Based Labels</h2>
+                <div class="phase-description">
+                    <h3>Objective: Maximum entropy label transformation</h3>
+                </div>
+                <div class="formula-box">
+                    <h3>Label Transformation</h3>
+                    <p class="formula">y<sub>forget</sub> = [1/K, 1/K, ..., 1/K]</p>
+                    <p class="formula-desc">Uniform distribution across K classes</p>
+                </div>
+                <div class="quantum-analogy">
+                    <h3>Quantum Analogy</h3>
+                    <div class="analogy-grid">
+                        <div class="analogy-item">
+                            <h4>Classical Labels</h4>
+                            <p>One-hot encoding: [0, 0, 1, 0]</p>
+                        </div>
+                        <div class="analogy-item">
+                            <h4>Quantum Superposition</h4>
+                            <p>Equal probability: [0.25, 0.25, 0.25, 0.25]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefits">
+                    <h3>Benefits</h3>
+                    <ul>
+                        <li>Maximum uncertainty for forget class</li>
+                        <li>Eliminates class-specific information</li>
+                        <li>Promotes equal likelihood across all classes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Phase 3: Quantum Loss Function -->
+        <div class="slide" id="slide-9">
+            <div class="slide-content">
+                <h2>Phase 3: Quantum Loss Function</h2>
+                <div class="phase-description">
+                    <h3>Dual-objective optimization inspired by uncertainty principle</h3>
+                </div>
+                <div class="formula-box">
+                    <h3>Loss Formulation</h3>
+                    <p class="formula">L<sub>quantum</sub> = I[y≠c<sub>F</sub>] × L<sub>CE</sub> + λ × I[y=c<sub>F</sub>] × H(ŷ)</p>
+                    <div class="formula-components">
+                        <p>• L<sub>CE</sub>: Cross-entropy loss for retained classes</p>
+                        <p>• H(ŷ): Entropy maximization for forget class</p>
+                        <p>• λ: Balance parameter</p>
+                        <p>• I[·]: Indicator function</p>
+                    </div>
+                </div>
+                <div class="dual-objective">
+                    <div class="objective-item">
+                        <h4>Retain Performance</h4>
+                        <p>Maintain accuracy on non-forget classes</p>
+                    </div>
+                    <div class="objective-item">
+                        <h4>Maximize Uncertainty</h4>
+                        <p>Increase entropy for forget class predictions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Phase 4: Entanglement-Inspired Mixing -->
+        <div class="slide" id="slide-10">
+            <div class="slide-content">
+                <h2>Phase 4: Entanglement-Inspired Mixing</h2>
+                <div class="phase-description">
+                    <h3>Final interference step with weight mixing matrix</h3>
+                </div>
+                <div class="formula-box">
+                    <h3>Weight Mixing</h3>
+                    <p class="formula">W<sub>final</sub> = W × M</p>
+                    <p class="formula-desc">Where M is the entanglement mixing matrix</p>
+                </div>
+                <div class="mixing-process">
+                    <h3>Mixing Process</h3>
+                    <div class="process-steps">
+                        <div class="step">
+                            <h4>Step 1</h4>
+                            <p>Generate mixing matrix M with controlled randomness</p>
+                        </div>
+                        <div class="step">
+                            <h4>Step 2</h4>
+                            <p>Apply matrix multiplication to create weight entanglement</p>
+                        </div>
+                        <div class="step">
+                            <h4>Step 3</h4>
+                            <p>Blur decision boundaries for forget class</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="purpose">
+                    <h3>Purpose</h3>
+                    <ul>
+                        <li>Creates correlated parameter dependencies</li>
+                        <li>Final interference to eliminate class-specific patterns</li>
+                        <li>Ensures holistic unlearning across model layers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Algorithm Overview -->
+        <div class="slide" id="slide-11">
+            <div class="slide-content">
+                <h2>Algorithm Overview</h2>
+                <div class="algorithm-pipeline">
+                    <h3>Complete 4-Phase Pipeline</h3>
+                    <div class="pipeline-flow">
+                        <div class="pipeline-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Destructive Interference</h4>
+                                <p>Weight transformation</p>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="pipeline-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Superposition Labels</h4>
+                                <p>Uniform distribution</p>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="pipeline-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Quantum Loss</h4>
+                                <p>Dual-objective training</p>
+                            </div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="pipeline-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Entanglement Mixing</h4>
+                                <p>Final interference</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="complexity-analysis">
+                    <h3>Complexity Analysis</h3>
+                    <p class="formula">Time Complexity: O(E × |D| × T)</p>
+                    <div class="complexity-components">
+                        <p>• E: Number of training epochs</p>
+                        <p>• |D|: Size of training dataset</p>
+                        <p>• T: Model parameter count</p>
+                    </div>
+                </div>
+                <div class="architecture-agnostic">
+                    <h3>Architecture-Agnostic Design</h3>
+                    <p>Compatible with ResNet18, Vision Transformer (ViT), CNN architectures</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Experimental Setup -->
+        <div class="slide" id="slide-12">
+            <div class="slide-content">
+                <h2>Experimental Setup</h2>
+                <div class="setup-grid">
+                    <div class="setup-section">
+                        <h3>Datasets</h3>
+                        <ul>
+                            <li><strong>AudioMNIST:</strong> Digit classification</li>
+                            <li><strong>Speech Commands:</strong> Keyword recognition</li>
+                            <li><strong>LibriSpeech:</strong> Speaker identification</li>
+                            <li><strong>Speech Accent Archive:</strong> Accent classification</li>
+                        </ul>
+                    </div>
+                    <div class="setup-section">
+                        <h3>Model Architectures</h3>
+                        <ul>
+                            <li><strong>ResNet18:</strong> Convolutional architecture</li>
+                            <li><strong>Vision Transformer (ViT):</strong> Attention-based</li>
+                            <li><strong>CNN:</strong> Traditional deep learning</li>
+                        </ul>
+                    </div>
+                    <div class="setup-section">
+                        <h3>Baseline Comparisons</h3>
+                        <ul>
+                            <li>Gradient Ascent</li>
+                            <li>Synaptic Dampening</li>
+                            <li>Fisher Forgetting</li>
+                            <li>Negative Gradient</li>
+                        </ul>
+                    </div>
+                    <div class="setup-section">
+                        <h3>Hardware & Environment</h3>
+                        <ul>
+                            <li>GPU-accelerated training</li>
+                            <li>Python/PyTorch implementation</li>
+                            <li>Cross-validation protocols</li>
+                            <li>Statistical significance testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Evaluation Metrics -->
+        <div class="slide" id="slide-13">
+            <div class="slide-content">
+                <h2>Evaluation Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <h3>Forget Accuracy (FA)</h3>
+                        <p>Classification accuracy on forget class (lower is better)</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3>Retain Accuracy (RA)</h3>
+                        <p>Classification accuracy on retained classes (higher is better)</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3>Information Leakage (IL)</h3>
+                        <p>Residual information about forget class</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3>Privacy Erasure Rate (PER)</h3>
+                        <p>Percentage of privacy information removed</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3>False Acceptance Rate (FAR)</h3>
+                        <p>Incorrectly accepting forget class samples</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3>False Rejection Rate (FRR)</h3>
+                        <p>Incorrectly rejecting retained class samples</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3>Erasing Retention Balance (ERB)</h3>
+                        <p>Overall balance between forgetting and retention</p>
+                    </div>
+                </div>
+                <div class="ideal-performance">
+                    <h3>Ideal Performance Target</h3>
+                    <p><strong>FA = 0%, PER = 100%, RA ≈ Original Accuracy</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Single-Class Results -->
+        <div class="slide" id="slide-14">
+            <div class="slide-content">
+                <h2>Single-Class Unlearning Results</h2>
+                <div class="results-highlight">
+                    <div class="result-box perfect">
+                        <h3>Perfect Erasure Achieved</h3>
+                        <p class="big-number">0.00%</p>
+                        <p>Forget Accuracy</p>
+                    </div>
+                    <div class="result-box excellent">
+                        <h3>Complete Privacy</h3>
+                        <p class="big-number">100%</p>
+                        <p>Privacy Erasure Rate</p>
+                    </div>
+                    <div class="result-box minimal">
+                        <h3>Minimal Utility Loss</h3>
+                        <p class="big-number">0.05%</p>
+                        <p>Performance Degradation</p>
+                    </div>
+                </div>
+                <div class="comparison-table">
+                    <h3>Baseline Comparison (AudioMNIST)</h3>
+                    <table>
+                        <tr>
+                            <th>Method</th>
+                            <th>Forget Accuracy</th>
+                            <th>Retain Accuracy</th>
+                            <th>Privacy Erasure Rate</th>
+                        </tr>
+                        <tr>
+                            <td><strong>QPAudioEraser</strong></td>
+                            <td><strong>0.00%</strong></td>
+                            <td><strong>99.95%</strong></td>
+                            <td><strong>100%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Gradient Ascent</td>
+                            <td>45.2%</td>
+                            <td>92.8%</td>
+                            <td>54.8%</td>
+                        </tr>
+                        <tr>
+                            <td>Fisher Forgetting</td>
+                            <td>32.1%</td>
+                            <td>94.5%</td>
+                            <td>67.9%</td>
+                        </tr>
+                        <tr>
+                            <td>Negative Gradient</td>
+                            <td>28.7%</td>
+                            <td>90.2%</td>
+                            <td>71.3%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Multi-Class & Sequential Results -->
+        <div class="slide" id="slide-15">
+            <div class="slide-content">
+                <h2>Multi-Class & Sequential Unlearning Results</h2>
+                <div class="results-sections">
+                    <div class="result-section">
+                        <h3>Parallel Multi-Class Unlearning</h3>
+                        <p><strong>Task:</strong> Simultaneously forget classes 0 & 4 (AudioMNIST)</p>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <p><strong>Forget Accuracy:</strong> 0.00%</p>
+                            </div>
+                            <div class="result-item">
+                                <p><strong>Retain Accuracy:</strong> 99.2%</p>
+                            </div>
+                            <div class="result-item">
+                                <p><strong>Processing Time:</strong> 1.3× single class</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-section">
+                        <h3>Sequential Speaker Removal</h3>
+                        <p><strong>Task:</strong> Remove 6 speakers sequentially (LibriSpeech)</p>
+                        <div class="sequential-results">
+                            <table>
+                                <tr>
+                                    <th>Removal Step</th>
+                                    <th>Speakers Removed</th>
+                                    <th>Forget Accuracy</th>
+                                    <th>Retain Accuracy</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0.00%</td>
+                                    <td>98.7%</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>0.00%</td>
+                                    <td>97.8%</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>6</td>
+                                    <td>0.00%</td>
+                                    <td>96.5%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="key-findings">
+                    <h3>Key Findings</h3>
+                    <ul>
+                        <li>Maintains perfect erasure across multiple scenarios</li>
+                        <li>Graceful degradation in sequential removal</li>
+                        <li>Scalable to complex unlearning requirements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: Accent Unlearning Results -->
+        <div class="slide" id="slide-16">
+            <div class="slide-content">
+                <h2>Accent Unlearning Results</h2>
+                <div class="accent-task">
+                    <h3>Challenge: Spanish Accent Erasure</h3>
+                    <p><strong>Dataset:</strong> Speech Accent Archive</p>
+                    <p><strong>Complexity:</strong> Phonetic overlaps with other accents</p>
+                </div>
+                <div class="accent-results">
+                    <div class="result-highlight">
+                        <div class="accent-metric">
+                            <h4>Spanish Accent Removal</h4>
+                            <p class="metric-value">0.00%</p>
+                            <p class="metric-label">Forget Accuracy</p>
+                        </div>
+                        <div class="accent-metric">
+                            <h4>Other Accents Preserved</h4>
+                            <p class="metric-value">88.74%</p>
+                            <p class="metric-label">Retain Accuracy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="challenges-addressed">
+                    <h3>Challenges Successfully Addressed</h3>
+                    <ul>
+                        <li><strong>Phonetic Similarities:</strong> Overlapping pronunciation patterns</li>
+                        <li><strong>Spectral Confusion:</strong> Similar frequency distributions</li>
+                        <li><strong>Cross-accent Interference:</strong> Avoiding unintended erasure</li>
+                        <li><strong>Cultural Preservation:</strong> Maintaining linguistic diversity</li>
+                    </ul>
+                </div>
+                <div class="comparison-note">
+                    <h3>Baseline Performance</h3>
+                    <p>Traditional methods achieved 35-65% forget accuracy, indicating incomplete erasure of accent-specific features.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Ablation Study -->
+        <div class="slide" id="slide-17">
+            <div class="slide-content">
+                <h2>Ablation Study</h2>
+                <div class="ablation-overview">
+                    <h3>Component Importance Analysis</h3>
+                    <p>Systematic evaluation of each quantum-inspired component</p>
+                </div>
+                <div class="ablation-results">
+                    <table>
+                        <tr>
+                            <th>Configuration</th>
+                            <th>Forget Accuracy</th>
+                            <th>Retain Accuracy</th>
+                            <th>Performance Drop</th>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Full QPAudioEraser</strong></td>
+                            <td><strong>0.00%</strong></td>
+                            <td><strong>99.95%</strong></td>
+                            <td><strong>-</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Without Phase 1 (Interference)</td>
+                            <td>23.4%</td>
+                            <td>97.2%</td>
+                            <td>↓2.75%</td>
+                        </tr>
+                        <tr>
+                            <td>Without Phase 2 (Superposition)</td>
+                            <td>12.8%</td>
+                            <td>98.7%</td>
+                            <td>↓1.25%</td>
+                        </tr>
+                        <tr>
+                            <td>Without Phase 3 (Quantum Loss)</td>
+                            <td>18.9%</td>
+                            <td>96.8%</td>
+                            <td>↓3.15%</td>
+                        </tr>
+                        <tr>
+                            <td>Without Phase 4 (Entanglement)</td>
+                            <td>8.7%</td>
+                            <td>99.1%</td>
+                            <td>↓0.85%</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="hyperparameter-analysis">
+                    <h3>Hyperparameter λ Sensitivity</h3>
+                    <div class="lambda-results">
+                        <div class="lambda-item">
+                            <h4>λ = 0.1</h4>
+                            <p>FA: 15.2%, RA: 99.1%</p>
+                        </div>
+                        <div class="lambda-item optimal">
+                            <h4>λ = 0.5 (Optimal)</h4>
+                            <p>FA: 0.0%, RA: 99.95%</p>
+                        </div>
+                        <div class="lambda-item">
+                            <h4>λ = 0.9</h4>
+                            <p>FA: 0.0%, RA: 94.8%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 18: Key Findings -->
+        <div class="slide" id="slide-18">
+            <div class="slide-content">
+                <h2>Key Findings</h2>
+                <div class="findings-grid">
+                    <div class="finding-item breakthrough">
+                        <h3>🎯 Perfect Erasure + High Utility</h3>
+                        <p>Only method achieving <strong>0% forget accuracy</strong> while maintaining <strong>99.95% retain accuracy</strong></p>
+                    </div>
+                    <div class="finding-item scalable">
+                        <h3>📈 Scalability Across Scenarios</h3>
+                        <p>Consistent performance in single-class, multi-class, sequential, and accent unlearning tasks</p>
+                    </div>
+                    <div class="finding-item essential">
+                        <h3>⚛️ Quantum Components Are Essential</h3>
+                        <p>Ablation study shows all four phases contribute significantly to performance</p>
+                    </div>
+                    <div class="finding-item architecture">
+                        <h3>🏗️ Architecture Independence</h3>
+                        <p>Effective across ResNet18, Vision Transformer, and CNN architectures</p>
+                    </div>
+                    <div class="finding-item baseline">
+                        <h3>🚀 Superior Baseline Performance</h3>
+                        <p>Outperforms existing methods by <strong>28-45 percentage points</strong> in forget accuracy</p>
+                    </div>
+                    <div class="finding-item practical">
+                        <h3>⚡ Practical Implementation</h3>
+                        <p>Reasonable computational overhead with <strong>O(E×|D|×T)</strong> complexity</p>
+                    </div>
+                </div>
+                <div class="significance">
+                    <h3>Statistical Significance</h3>
+                    <p>All results validated with <strong>p-value &lt; 0.01</strong> across 5-fold cross-validation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Related Work Comparison -->
+        <div class="slide" id="slide-19">
+            <div class="slide-content">
+                <h2>Related Work Comparison</h2>
+                <div class="related-work-grid">
+                    <div class="work-category">
+                        <h3>Traditional Machine Unlearning</h3>
+                        <ul>
+                            <li><strong>Gradient Ascent:</strong> Simple but ineffective</li>
+                            <li><strong>Influence Functions:</strong> Computational complexity</li>
+                            <li><strong>Model Retraining:</strong> Resource intensive</li>
+                            <li><strong>Limitation:</strong> Designed for visual/tabular data</li>
+                        </ul>
+                    </div>
+                    <div class="work-category">
+                        <h3>Audio-Specific Challenges</h3>
+                        <ul>
+                            <li><strong>Temporal Dependencies:</strong> Sequential patterns</li>
+                            <li><strong>Spectral Features:</strong> Frequency domain complexity</li>
+                            <li><strong>Speaker Characteristics:</strong> Individual voice traits</li>
+                            <li><strong>Phonetic Similarities:</strong> Cross-class confusion</li>
+                        </ul>
+                    </div>
+                    <div class="work-category">
+                        <h3>Quantum-Inspired Advantages</h3>
+                        <ul>
+                            <li><strong>Interference-based Erasure:</strong> Natural cancellation</li>
+                            <li><strong>Superposition Labels:</strong> Maximum entropy</li>
+                            <li><strong>Entanglement Effects:</strong> Holistic parameter updates</li>
+                            <li><strong>Uncertainty Principle:</strong> Dual-objective optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="positioning">
+                    <h3>Our Positioning</h3>
+                    <div class="position-statement">
+                        <p><strong>QPAudioEraser</strong> is the first work to successfully adapt quantum-inspired principles for audio unlearning, addressing the unique challenges of sequential, temporal, and spectral data while achieving perfect erasure with minimal utility loss.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: Conclusion & Future Work -->
+        <div class="slide" id="slide-20">
+            <div class="slide-content">
+                <h2>Conclusion & Future Work</h2>
+                <div class="conclusion-grid">
+                    <div class="conclusion-section">
+                        <h3>🎯 Key Contributions</h3>
+                        <ul>
+                            <li>First quantum-inspired audio unlearning framework</li>
+                            <li>Perfect erasure (0% FA) with minimal utility loss</li>
+                            <li>Architecture-agnostic design</li>
+                            <li>GDPR compliance ready solution</li>
+                        </ul>
+                    </div>
+                    <div class="conclusion-section">
+                        <h3>📊 Impact</h3>
+                        <ul>
+                            <li>100% privacy erasure rate achieved</li>
+                            <li>28-45 pp improvement over baselines</li>
+                            <li>Scalable across multiple scenarios</li>
+                            <li>Practical computational complexity</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="future-work">
+                    <h3>🔮 Future Directions</h3>
+                    <div class="future-grid">
+                        <div class="future-item">
+                            <h4>Real-time Processing</h4>
+                            <p>Streaming audio unlearning for live systems</p>
+                        </div>
+                        <div class="future-item">
+                            <h4>Broader Biometric Applications</h4>
+                            <p>Extend to face, gait, and multimodal biometrics</p>
+                        </div>
+                        <div class="future-item">
+                            <h4>Quantum Hardware Integration</h4>
+                            <p>Implementation on actual quantum processors</p>
+                        </div>
+                        <div class="future-item">
+                            <h4>Federated Unlearning</h4>
+                            <p>Distributed quantum-inspired erasure</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="thank-you">
+                    <h3>Thank You!</h3>
+                    <p><strong>Questions & Discussion</strong></p>
+                    <p>Contact: shreyansh.pathak@iitj.ac.in</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="navigation">
+        <button id="prev-btn" class="nav-btn">← Previous</button>
+        <span id="slide-counter" class="slide-counter">1 / 20</span>
+        <button id="next-btn" class="nav-btn">Next →</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
